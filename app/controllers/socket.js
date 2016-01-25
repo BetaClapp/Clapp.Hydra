@@ -2,12 +2,15 @@ function initialize(io, ioClient, globals){
 	var kerberos = null;
 	var myKerberosId = null;
 	
-	//if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
+	if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
 		kerberos = ioClient.connect(globals.Kerberos);
 		
-	//console.log(kerberos);
 	kerberos.on('connect', function(){
 		console.log('Connected to Kerberos');
+	});
+	
+	kerberos.on('disconnect', function(){
+		console.log('Kerberos is offline');
 	});
 	
 	kerberos.on('Welcome', function(data){
