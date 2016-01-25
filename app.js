@@ -1,7 +1,7 @@
  // Clapp.Hydra
  // v. 0.1.0
 
-console.log('== TuGrua.co Backend ==');
+console.log('\n\t\t== Clapp.Hydra ==');
 
 // =======================
 // libraries =========
