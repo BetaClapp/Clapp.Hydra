@@ -15,6 +15,7 @@
     "body-parser": "latest",
     "jsonwebtoken": "latest",
     "socket.io": "latest",
+    "socket.io-client": "latest",
     "is-online": "latest",
     "ejs": "latest"
   }

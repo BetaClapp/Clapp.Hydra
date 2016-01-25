@@ -11,6 +11,7 @@ var app 		= express();
 var path 		= require('path');
 var http 		= require('http').Server(app);
 var io 			= require("socket.io")(http);
+var ioClient	= require('socket.io-client');
 var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
@@ -40,7 +41,7 @@ app.use(bodyParser.json());
 // =======================
 frontend.initialize(app, express, path);
 routes.initialize(app, express);
-socketController.initialize(io, globals);
+socketController.initialize(io, ioClient, globals);
 
 console.log('modules initialized');
 
