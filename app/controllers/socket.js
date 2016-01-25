@@ -1,5 +1,6 @@
 function initialize(io, ioClient, globals){
 	var kerberos = null;
+	var myKerberosId = null;
 	
 	//if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
 		kerberos = ioClient.connect(globals.Kerberos);
@@ -7,6 +8,14 @@ function initialize(io, ioClient, globals){
 	//console.log(kerberos);
 	kerberos.on('connect', function(){
 		console.log('Connected to Kerberos');
+	});
+	
+	kerberos.on('Welcome', function(data){
+		myKerberosId = data.SocketId;
+	});
+	
+	kerberos.on('youRConnected?', function(){
+		kerberos.emit('ImConnected', {KerberosId : myKerberosId});
 	});
 	
 	io.sockets.on('connection', function(socket){     
