@@ -4,7 +4,7 @@ function initialize(io, ioClient, globals){
 	//if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
 		kerberos = ioClient.connect(globals.Kerberos);
 		
-	console.log(kerberos);
+	//console.log(kerberos);
 	kerberos.on('connect', function(){
 		console.log('Connected to Kerberos');
 	});
