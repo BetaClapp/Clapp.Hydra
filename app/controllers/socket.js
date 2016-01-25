@@ -1,7 +1,7 @@
 function initialize(io, ioClient, globals){
 	var kerberos = null;
 	
-	if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
+	//if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
 		kerberos = ioClient.connect(globals.Kerberos, {reconnect: true});
 		
 	kerberos.on('connect', function(){
