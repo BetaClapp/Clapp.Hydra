@@ -1,0 +1,25 @@
+* { padding: 0; margin: 0; }
+html, body{
+	background-color: #c9c9c9;
+	min-height: 100% !important;
+	height: 100%;
+	width: 100%;
+}
+.big-logo-container{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.big-logo{
+	background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 196px;
+    width: 454px;
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -5% 0 0 -16%;
+}
