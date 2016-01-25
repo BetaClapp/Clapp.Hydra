@@ -3,6 +3,10 @@ function initialize(io, ioClient, globals){
 	
 	if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
 		kerberos = ioClient.connect(globals.Kerberos, {reconnect: true});
+		
+	kerberos.on('connect', function(){
+		console.log('Connected to Kerberos');
+	});
 	
 	io.sockets.on('connection', function(socket){     
 
