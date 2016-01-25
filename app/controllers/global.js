@@ -1,4 +1,4 @@
 /// Properties
-var Kerberos = 'clapp.cloudapp.net:80';
+var Kerberos = 'http://clapp.cloudapp.net:3000/';
 
 exports.Kerberos = Kerberos;
