@@ -1,0 +1,21 @@
+{
+  "name": "Clapp.Hydra",
+  "version": "1.0.0",
+  "description": "http://betaclapp.github.io//",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/BetaClapp/Clapp.Hydra"
+  },
+  "readme": "https://github.com/BetaClapp/Clapp.Hydra/blob/master/README.md",
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "body-parser": "latest",
+    "jsonwebtoken": "latest",
+    "socket.io": "latest",
+    "is-online": "latest",
+    "ejs": "latest"
+  }
+}
