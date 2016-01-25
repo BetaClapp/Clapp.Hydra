@@ -1,7 +1,7 @@
  // Clapp.Hydra
  // v. 0.1.0
 
-console.log('\n\t\t== Clapp.Hydra ==');
+console.log('\n\t\t\t\t== Clapp.Hydra ==');
 
 // =======================
 // libraries =========
