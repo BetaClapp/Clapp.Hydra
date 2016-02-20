@@ -20,6 +20,10 @@ function initialize(io, ioClient, globals){
 	kerberos.on('youRConnected?', function(){
 		kerberos.emit('ImConnected', {KerberosId : myKerberosId});
 	});
+    
+    kerberos.on('Clapp.Kerberos.Message', function(data){
+        kerberosMessageHub(data);
+    })
 	
 	io.sockets.on('connection', function(socket){     
 
@@ -58,6 +62,16 @@ function initialize(io, ioClient, globals){
 	});
 		
 	console.log('Socket.io initialized');
+    
+    function kerberosMessageHub(data){
+        var values = data.Values;
+        var command = data.Command;
+        switch(command) {
+            case "GiveYourHydraInformation":
+                kerberos.emit('Clapp.Hydra.Information', globals.HydraUUID);
+                break;
+        }
+    }
 }
 
 exports.initialize = initialize;
