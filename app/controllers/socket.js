@@ -64,6 +64,7 @@ function initialize(io, ioClient, globals){
 	console.log('Socket.io initialized');
     
     function kerberosMessageHub(data){
+        console.log('Kerberos catched: Clapp.Kerberos.Message');
         var values = data.Values;
         var command = data.Command;
         switch(command) {
