@@ -18,7 +18,7 @@ noble.on('stateChange', function (state) {
 noble.on('discover', function(peripheral) {
   peripheral.connect(function(error) {
     console.log('connected to peripheral: ' + peripheral.uuid);
-    peripheral.discoverServices(['180a'], function(error, services) {
+    peripheral.discoverServices(['1800'], function(error, services) {
       var deviceInformationService = services[0];
       console.log('discovered device information service');
 
