@@ -1,0 +1,15 @@
+{
+  "name": "Clapp.Hydra.Experiments",
+  "version": "1.0.0",
+  "description": "http://betaclapp.github.io/",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/BetaClapp/Clapp.Hydra"
+  },
+  "readme": "https://github.com/BetaClapp/Clapp.Hydra/blob/master/README.md",
+  "dependencies": {
+    "noble": "latest",
+    "bleacon": "latest"
+  }
+}
