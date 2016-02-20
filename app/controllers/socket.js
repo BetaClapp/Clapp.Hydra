@@ -69,6 +69,7 @@ function initialize(io, ioClient, globals){
         var command = data.Command;
         switch(command) {
             case "GiveYourHydraInformation":
+            console.log(globals.HydraUUID);
                 kerberos.emit('Clapp.Hydra.Information', globals.HydraUUID);
                 break;
         }
