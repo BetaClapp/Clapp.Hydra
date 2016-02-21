@@ -1,31 +1,7 @@
-function initialize(io, ioClient, globals, noble){
+function initialize(io, ioClient, globals){
 	var kerberos = null;
 	var myKerberosId = null;
-    
-    /// Starting noble
-    noble.on('stateChange', function (state) {
-        console.log('Noble library report Bluetooth state: ' + state);
-        if (state === 'poweredOn') {            
-                noble.startScanning();
-            } else {
-                noble.stopScanning();
-            }
-    });
-    
-    /// When a beacon is discovered
-    noble.on('discover', function(peripheral) {
-        peripheral.connect(function(error) {
-            console.log('connected to peripheral: ' + peripheral.uuid);
-            
-            globals.Beacons.push(peripheral.uuid);
-
-            peripheral.disconnect(function(error) {
-            console.log('disconnected from peripheral: ' + peripheral.uuid);
-            });
-        });
-    }); 
-
-	
+    	
 	if(globals.Kerberos != undefined && globals.Kerberos.length > 0)
 		kerberos = ioClient.connect(globals.Kerberos);
 		
