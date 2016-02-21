@@ -74,7 +74,7 @@ function initialize(io, ioClient, globals){
                 break;
             case "GiveYourAllInformation":
                 if(values.UUID == globals.HydraSettings.UUID){
-                    kerberos.emit('Clapp.Hydra.Message', {Command: 'ThisIsMyInformation', Values : { HydraInformation : globals.HydraSettings, Beacons: globals.Beacons}});
+                    kerberos.emit('Clapp.Hydra.Message', {Command: 'ThisIsMyOwnHydraInformation', Values : { HydraInformation : globals.HydraSettings, Beacons: globals.Beacons}});
                 }
         }
     }
