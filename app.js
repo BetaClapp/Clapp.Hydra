@@ -17,6 +17,7 @@ var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 var jwt   		= require('jsonwebtoken'); // used to create, sign, and verify tokens
 var checkInternet = require('is-online');
+var noble       = require('noble');
 
 var globals 		= require('./app/controllers/global');
 var frontend 		= require('./app/controllers/frontend');
@@ -41,7 +42,7 @@ app.use(bodyParser.json());
 // =======================
 frontend.initialize(app, express, path);
 routes.initialize(app, express);
-socketController.initialize(io, ioClient, globals);
+socketController.initialize(io, ioClient, globals, noble);
 
 console.log('modules initialized');
 
