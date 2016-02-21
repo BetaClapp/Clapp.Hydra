@@ -14,9 +14,15 @@ function initialize(io, ioClient, globals, noble){
     
     /// When a beacon is discovered
     noble.on('discover', function(peripheral) {
-        console.log('Found device with local name: ' + peripheral.advertisement.localName);
-        console.log('advertising the following service uuid\'s: ' + peripheral.advertisement.serviceUuids);
-        globals.Beacons.push(peripheral);
+        peripheral.connect(function(error) {
+            console.log('connected to peripheral: ' + peripheral.uuid);
+            
+            globals.Beacons.push(peripheral.uuid);
+
+            peripheral.disconnect(function(error) {
+            console.log('disconnected from peripheral: ' + peripheral.uuid);
+            });
+        });
     }); 
 
 	
