@@ -5,5 +5,8 @@ var HydraSettings = {
     Name : 'Lepimp'
 };
 
+var Beacons = [];
+
 exports.Kerberos = Kerberos;
 exports.HydraSettings = HydraSettings;
+exports.Beacons = Beacons;
