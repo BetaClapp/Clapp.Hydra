@@ -42,17 +42,6 @@ app.use(bodyParser.json());
 // =======================
 
 
-/// Starting noble
-noble.on('stateChange', function (state) {
-    console.log('Noble library report Bluetooth state: ' + state);
-    if (state === 'poweredOn') {            
-            noble.startScanning();
-        } else {
-            console.log('Noble library report Bluetooth state: ' + state);
-            noble.stopScanning();
-        }
-});
-
 /// When a beacon is discovered
 noble.on('discover', function(peripheral) {
     peripheral.connect(function(error) {
@@ -64,6 +53,17 @@ noble.on('discover', function(peripheral) {
         console.log('disconnected from peripheral: ' + peripheral.uuid);
         });
     });
+});
+
+/// Starting noble
+noble.on('stateChange', function (state) {
+    console.log('Noble library report Bluetooth state: ' + state);
+    if (state === 'poweredOn') {            
+            noble.startScanning([], true);
+        } else {
+            console.log('Noble library report Bluetooth state: ' + state);
+            noble.stopScanning();
+        }
 });
 
 frontend.initialize(app, express, path);
