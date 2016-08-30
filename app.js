@@ -55,7 +55,7 @@ noble.on('discover', function(peripheral) {
 noble.on('stateChange', function (state) {
     console.log('Noble library report Bluetooth state: ' + state);
     if (state === 'poweredOn') {            
-            noble.startScanning();
+            noble.startScanning([], true);
         } else {
             console.log('Noble library report Bluetooth state: ' + state);
             noble.stopScanning();
