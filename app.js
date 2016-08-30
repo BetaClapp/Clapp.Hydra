@@ -66,14 +66,14 @@ noble.on('stateChange', function (state) {
         }
 });
 
-//frontend.initialize(app, express, path);
-//routes.initialize(app, express);
-//socketController.initialize(io, ioClient, globals);
+frontend.initialize(app, express, path);
+routes.initialize(app, express);
+socketController.initialize(io, ioClient, globals);
 
 console.log('modules initialized');
 
 // =======================
 // listening app =========
 // =======================
-//io.listen(app.listen(port));
+io.listen(app.listen(port));
 console.log('Listening on port 3000');
