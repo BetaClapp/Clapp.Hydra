@@ -45,13 +45,8 @@ app.use(bodyParser.json());
 /// When a beacon is discovered
 noble.on('discover', function(peripheral) {
     peripheral.connect(function(error) {
-        console.log('connected to peripheral: ' + peripheral.uuid);
-        
         globals.Beacons.push(peripheral.uuid);
-
-        peripheral.disconnect(function(error) {
-        console.log('disconnected from peripheral: ' + peripheral.uuid);
-        });
+        
     });
 });
 
