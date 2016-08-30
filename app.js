@@ -75,5 +75,5 @@ console.log('modules initialized');
 // =======================
 // listening app =========
 // =======================
-io.listen(app.listen(port));
+//io.listen(app.listen(port));
 console.log('Listening on port 3000');
